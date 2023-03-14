@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
+
 import { fetchAllReviews } from "../utils/api"
+import { Link } from "react-router-dom";
 
 
 
 function ShowAllReviews () {
    const [allReviews, setAllReviews] = useState([])
    const [isLoading, setIsLoading] = useState(true)
-
+   
    useEffect(() =>{
       fetchAllReviews().then((data) =>{
          setAllReviews(data)
@@ -28,7 +30,7 @@ function ShowAllReviews () {
                      <img className="reviewIMG" src={review.review_img_url} alt={`picture of ${review.title}`}/>
                      <h2>{review.title}</h2>
                      <p>{`Category: ${review.category}`}</p>
-                     <p>this will be a link to the full review</p>
+                     <Link to={`/reviews/${review.review_id}`}>Click here to read full review</Link>
                   </li>
                )
             })}

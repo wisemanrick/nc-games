@@ -20,3 +20,26 @@ ul {
 .reviewIMG {
   max-width: 80%;
 }
+
+.voting {
+  display: inline-flex;
+}
+
+
+.voteCount {
+  
+  font-size: 19px ;
+}
+
+button {
+  max-height: 19px;
+  font-size: 15px;
+  font-weight: bolder;
+  
+}
+
+.reviewBody {
+  padding-left: 10%;
+ 
+  width: 80%;
+}
