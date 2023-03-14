@@ -27,7 +27,7 @@ function ShowAllReviews () {
             {allReviews.map((review) =>{
                return (
                   <li className="review" key={review.review_id}>
-                     <img className="reviewIMG" src={review.review_img_url} alt={`picture of ${review.title}`}/>
+                     <img className="reviewIMG" src={review.review_img_url} alt={` ${review.title}`}/>
                      <h2>{review.title}</h2>
                      <p>{`Category: ${review.category}`}</p>
                      <Link to={`/reviews/${review.review_id}`}>Click here to read full review</Link>

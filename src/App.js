@@ -1,4 +1,4 @@
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 import ShowAllReviews from "./components/allReviews";
 import Header from "./components/header";
@@ -20,9 +20,6 @@ function App() {
         <Route path="/" element={<UserLogin />} />
         <Route path="/reviews" element={<ShowAllReviews />} />
         <Route path="/reviews/:review_ID" element={<SingleReview />} />
-
-
-
       </Routes>
     </div>
   );
