@@ -4,7 +4,7 @@ function UserLogin () {
     return (
         <section className="login">
         <h1>User login page</h1>
-        {/* <Link to="/reviews">Click to see reviews without loggin in</Link> */}
+        <Link to="/reviews">Click to see reviews without loggin in</Link>
         </section>
 
     )
