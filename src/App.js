@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 import ShowAllReviews from "./components/allReviews";
@@ -7,17 +8,15 @@ import NavBar from "./components/nav";
 import SingleReview from "./components/singleReview";
 
 
-
-
 function App() {
-  
+  const [user, setUser] = useState("")
   return (
     <div className="App">
       <Header />
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<UserLogin />} />
+        <Route path="/" element={<UserLogin user={user} setUser={setUser} />} />
         <Route path="/reviews" element={<ShowAllReviews />} />
         <Route path="/reviews/:review_ID" element={<SingleReview />} />
       </Routes>

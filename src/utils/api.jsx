@@ -36,11 +36,31 @@ export const fetchReviewComment = (review_ID) => {
 
 }
 
+export const voteForReview = (voted,review_ID ) => {
+    let votePath = `/reviews/${review_ID}`
+    console.log(review_ID)
+    return ncGamesBe
+        .patch(votePath, {inc_votes : voted})
+        .then(({data}) => {
+            return data.review.votes
+        })
+    
+}
+
 
 export const fetchAllCategories = () => {
+    let AllCategoriesPath = "/categories"
+    return ncGamesBe
+    .get(AllCategoriesPath).then(({data}) =>{
+        return data.categories
+    })
 
 }
 
 export const fetchAllUsers = () => {
-
+let userPath = "/users"
+return ncGamesBe
+    .get(userPath).then(({data}) =>{
+        return data.users
+    })
 }

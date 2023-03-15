@@ -1,13 +1,44 @@
 .App {
   text-align: center;
+  background-image: url("./images/background.jpg");
+  background-size: cover;
 }
 
 /* Global */
+* {
+  padding: 0;
+  margin: 0;
+}
 
 ul {
   list-style: none;
-  
 }
+
+
+/* Heading */
+.header {
+  
+  background-image: url("./images/banner-heading.jpg");
+  background-size: cover;
+  height: auto;
+  padding: 1rem;
+}
+
+.headerTxt {
+ 
+  font-size: 10dvw;
+}
+
+.txtBox {
+ 
+  background: rgba(3, 240, 212, 0.688);
+  width: fit-content;
+  border-radius: 25%;
+  padding : 1rem;
+  display: inline-block;
+}
+  
+
 /* All reviews */
 
 .reviewList {
@@ -68,4 +99,39 @@ button {
 .commentList {
   display: block;
   padding-right: 10%;
+}
+
+/* Login page */
+
+.login {
+  display: inline-block;
+  height: 800px;
+}
+.noAuth {
+  font-weight: bolder;
+  display: block;
+  background-color: rgba(3, 240, 212, 0.688);
+  
+}
+
+/* Nav bar */
+nav {
+  display: inline-block;
+  height: fit-content;
+  background-color: black;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.link {
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+  
+  width: 500px;
+  
+  flex-grow: 1;
+  flex-direction: row;
+  margin: 10px;
 }

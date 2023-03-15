@@ -10,7 +10,7 @@ function ListReviewComments ({review_ID}) {
         fetchReviewComment(review_ID).then((data) =>{
            setComment(data)
            setIsLoading(false)
-           
+                      
            
         })
      }, [review_ID])
