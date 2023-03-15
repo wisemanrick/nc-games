@@ -25,6 +25,18 @@ export const fetchSingleReview = (review_ID) => {
 
 }
 
+export const fetchReviewComment = (review_ID) => {
+   let commentPath =`/reviews/${review_ID}/comments`
+    //14
+    return ncGamesBe
+        .get(commentPath)
+        .then(({data}) => {
+            return data.comments
+        }) 
+
+}
+
+
 export const fetchAllCategories = () => {
 
 }

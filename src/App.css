@@ -2,16 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Global */
 
 ul {
   list-style: none;
   
 }
-
+/* All reviews */
 
 .reviewList {
   text-align: center;
@@ -20,7 +17,7 @@ ul {
 .reviewIMG {
   max-width: 80%;
 }
-
+/* Single review */
 .voting {
   display: inline-flex;
 }
@@ -38,8 +35,37 @@ button {
   
 }
 
+
 .reviewBody {
   padding-left: 10%;
+  padding-right:10% ;
  
-  width: 80%;
+  width: auto;
+}
+/* Comments */
+.CommentItem {
+  border: 5px black solid;
+  margin-bottom: 5px;
+  max-width: 300px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: 10px;
+  
+}
+.reviewList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.commentBody {
+  
+  padding: 20px;
+ 
+
+}
+
+.commentList {
+  display: block;
+  padding-right: 10%;
 }
