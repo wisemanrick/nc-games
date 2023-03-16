@@ -1,6 +1,13 @@
 
 function Header () {
-    return <h1>This will be the heading</h1>
+    return (
+    <section className="header">
+        <section className="txtBox">
+        <h1 className="headerTxt">NC-GAMES</h1>
+        </section>
+    </section>
+        )
+
 }
 
 export default Header
