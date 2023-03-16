@@ -7,7 +7,7 @@ function AddNewComment ({review_ID, user, comments, setComment}) {
 const [newComment, setNewComment] = useState("")
 const [newCommentError, setNewCommentError] = useState(false)
 const [hasCommented, setHasCommented] = useState(false)
-const [commentLengthCheck, setCommentLengthCheck] = useState(false)
+
 function handleSubmit(event) {
     event.preventDefault()
     setNewCommentError(false)
