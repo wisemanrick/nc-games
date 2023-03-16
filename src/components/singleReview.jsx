@@ -5,7 +5,7 @@ import ListReviewComments from "./comment"
 import ShowVotes from "./Votes"
 
 
-function SingleReview () {
+function SingleReview ({user}) {
 const [review, setReview] = useState([{}])
 const {review_ID} = useParams()
 
@@ -46,7 +46,7 @@ useEffect(() =>{
         
         }
          <section>
-         <ListReviewComments review_ID={review_ID}/>
+         <ListReviewComments review_ID={review_ID} user={user}/>
          </section>
         </section>
         

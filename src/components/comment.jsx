@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 import {fetchReviewComment} from "../utils/api"
+import AddNewComment from "./newComment"
 
 
-function ListReviewComments ({review_ID}) {
+function ListReviewComments ({review_ID, user} ) {
     const [comments, setComment] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error,setError] = useState(false)
+    
 
     useEffect(() =>{
         fetchReviewComment(review_ID)
@@ -41,8 +43,9 @@ function ListReviewComments ({review_ID}) {
             })}
 
          </ul>
-
+         <section> <AddNewComment review_ID={review_ID} user={user} comments={comments} setComment={setComment}/></section>
         </section>
+        
     }
     </section>
     
