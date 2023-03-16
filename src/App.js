@@ -9,7 +9,7 @@ import SingleReview from "./components/singleReview";
 
 
 function App() {
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState("tickle122")
   return (
     <div className="App">
       <Header />
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<UserLogin user={user} setUser={setUser} />} />
         <Route path="/reviews" element={<ShowAllReviews />} />
-        <Route path="/reviews/:review_ID" element={<SingleReview />} />
+        <Route path="/reviews/:review_ID" element={<SingleReview user={user} />}  />
       </Routes>
     </div>
   );

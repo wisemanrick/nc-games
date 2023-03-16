@@ -64,3 +64,12 @@ return ncGamesBe
         return data.users
     })
 }
+
+export const postNewComment = (postNewComment, review_ID) => {
+ let newCommentPath = `/reviews/${review_ID}/comments`
+
+ return ncGamesBe
+    .post(newCommentPath,postNewComment).then(({data}) =>{
+        return data.comment
+    })
+}
