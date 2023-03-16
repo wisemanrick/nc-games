@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<UserLogin user={user} setUser={setUser} />} />
         <Route path="/reviews" element={<ShowAllReviews />} />
         <Route path="/reviews/:review_ID" element={<SingleReview user={user} />}  />
-        <Route path="/reviews/categories/:category" element={<ShowAllReviews />} />
+        <Route path="/reviews/categories/" element={<ShowAllReviews />} />
       </Routes>
     </div>
   );
