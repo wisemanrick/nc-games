@@ -6,9 +6,12 @@ import { postNewComment } from "../utils/api"
 function AddNewComment ({review_ID, user, comments, setComment}) {
 const [newComment, setNewComment] = useState("")
 const [newCommentError, setNewCommentError] = useState(false)
+const [hasCommented, setHasCommented] = useState(false)
+const [commentLengthCheck, setCommentLengthCheck] = useState(false)
 function handleSubmit(event) {
     event.preventDefault()
     setNewCommentError(false)
+    setHasCommented(true)
     const buildPost = {
         username : user,
         body : newComment,
@@ -21,9 +24,9 @@ function handleSubmit(event) {
     }
     setComment([optimisticPost, ...comments])
     
-    postNewComment(buildPost, review_ID).then((data)=>{
-        
-    }).catch(() => {
+    postNewComment(buildPost, review_ID)
+    .catch(() => {
+        setHasCommented(false)
         setNewCommentError(true)
         setComment(comments.filter(comment => comment.comment_id !== "Temp"))
     })
@@ -32,6 +35,7 @@ function handleSubmit(event) {
     return(
         <section className="newComment">
             {newCommentError &&<p>There was an issue posting your comment, please refresh the page and try again</p>}
+            {newComment.length <=2 &&<p>comments must be longer than 3 characters</p>}
         <h1>New Comment here</h1>
         <form onSubmit={handleSubmit} className="newCommentForm">
             <label htmlFor="commentArea">Add you new comment below</label>
@@ -43,7 +47,7 @@ function handleSubmit(event) {
 
             >
             </textarea>
-            <button>Submit new comment</button>
+            <button disabled={hasCommented === true || newComment.length <= 2}>Submit new comment</button>
         </form>
         </section>
     )
