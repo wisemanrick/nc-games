@@ -5,20 +5,25 @@ import {fetchReviewComment} from "../utils/api"
 function ListReviewComments ({review_ID}) {
     const [comments, setComment] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [error,setError] = useState(false)
 
     useEffect(() =>{
-        fetchReviewComment(review_ID).then((data) =>{
+        fetchReviewComment(review_ID)
+        .then((data) =>{
            setComment(data)
-           setIsLoading(false)
-                      
-           
+           setIsLoading(false)                   
+        }).catch(() =>{
+         setError(true)
+         setIsLoading(false)
         })
      }, [review_ID])
 
     return (
     <section>
     <h1>Comments</h1>
-    {isLoading? <p>No Comments yet.</p> : 
+    {error && <p>No comments yets, be the first</p>}
+    {isLoading? <p>Loading...</p> : 
+    
         <section>
 
             
