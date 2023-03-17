@@ -5,12 +5,13 @@ const ncGamesBe = axios.create({
     baseURL: "https://nc-games-backend-68d2.onrender.com/api"
 })
 
-export const fetchAllReviews = (category, sort) => {
+export const fetchAllReviews = (category, sort,orderBy) => {
     console.log(category)
     let path =`/reviews`
     return ncGamesBe
         .get(path,{params:{category:category,
-                            sort_by: sort}})
+                            sort_by: sort,
+                            order: orderBy}})
         .then(({data}) => {
             return data.reviews
         }) 

@@ -10,17 +10,18 @@ function ShowAllReviews () {
    const getCategory = searchParams.get("category")
    const getSortBy = searchParams.get("sort_by")
    const [allReviews, setAllReviews] = useState([])
+   const getOrderBy = searchParams.get("order")
    const [isLoading, setIsLoading] = useState(true)
    console.log(getSortBy)
    
    useEffect(() =>{
-      fetchAllReviews(getCategory, getSortBy).then((data) =>{
+      fetchAllReviews(getCategory, getSortBy, getOrderBy).then((data) =>{
          setAllReviews(data)
          setIsLoading(false)
          
          
       })
-   }, [getCategory,getSortBy])
+   }, [getCategory,getSortBy, getOrderBy])
 
    return (
       <section className="allReviews">
