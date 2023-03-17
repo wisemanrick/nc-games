@@ -11,7 +11,7 @@ const [allUsers, setAllUsers] = useState([])
         })
         
 
-    },[])
+    },[allUsers])
 
     return (
       
