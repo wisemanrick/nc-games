@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react"
-
 import { fetchAllReviews } from "../utils/api"
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 
 
 function ShowAllReviews () {
+   const [searchParams, setSearchParams] = useSearchParams()
+   const getCategory = searchParams.get("category")
    const [allReviews, setAllReviews] = useState([])
    const [isLoading, setIsLoading] = useState(true)
-   
+   console.log(getCategory)
    
    useEffect(() =>{
-      fetchAllReviews().then((data) =>{
+      fetchAllReviews(getCategory).then((data) =>{
          setAllReviews(data)
          setIsLoading(false)
          
          
       })
-   }, [])
+   }, [getCategory])
 
    return (
       <section className="allReviews">

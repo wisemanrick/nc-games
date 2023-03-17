@@ -5,10 +5,11 @@ const ncGamesBe = axios.create({
     baseURL: "https://nc-games-backend-68d2.onrender.com/api"
 })
 
-export const fetchAllReviews = () => {
+export const fetchAllReviews = (category) => {
+    console.log(category)
     let path =`/reviews`
     return ncGamesBe
-        .get(path,)
+        .get(path,{params:{category:category}})
         .then(({data}) => {
             return data.reviews
         }) 
