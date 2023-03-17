@@ -6,13 +6,13 @@ import SortReviews from "./sortReview";
 
 
 function ShowAllReviews () {
-   const [searchParams, setSearchParams] = useSearchParams()
+   const [searchParams] = useSearchParams()
    const getCategory = searchParams.get("category")
    const getSortBy = searchParams.get("sort_by")
    const [allReviews, setAllReviews] = useState([])
    const getOrderBy = searchParams.get("order")
    const [isLoading, setIsLoading] = useState(true)
-   console.log(getSortBy)
+  
    
    useEffect(() =>{
       fetchAllReviews(getCategory, getSortBy, getOrderBy).then((data) =>{

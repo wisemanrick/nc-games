@@ -18,7 +18,7 @@ function NavBar () {
     
     <section>
         {allCategories.map((category)=>{
-         return   <Link className="link" to={`/reviews/categories?category=${category.slug}`}>{category.slug}</Link>
+         return   <Link key={category.slug} className="link" to={`/reviews/categories?category=${category.slug}`}>{category.slug}</Link>
          
         })}
     </section>

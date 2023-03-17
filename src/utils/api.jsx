@@ -6,7 +6,7 @@ const ncGamesBe = axios.create({
 })
 
 export const fetchAllReviews = (category, sort,orderBy) => {
-    console.log(category)
+    
     let path =`/reviews`
     return ncGamesBe
         .get(path,{params:{category:category,
