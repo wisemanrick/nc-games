@@ -135,3 +135,9 @@ nav {
   flex-direction: row;
   margin: 10px;
 }
+
+/* Sort Reviews */
+.sortLink {
+  color: aqua;
+  margin: 5px;
+}
